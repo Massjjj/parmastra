@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>parmalac</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Residenti nel Comune di Parma per età, nazionalità, quartiere e sesso</h1>
+        </header>
+        <main>
+            <section>
+                <!--range d'età-->
+                <div class="age-range">
+                    <div id="interval">
+                        <label> Intervallo d'età: <span id="age-range-label">0 - 120</span></label>
+                    </div>    
+                    <div id="move-thumbs">
+                        <label>--- muovi i pomelli ---</label>          
+                    </div>                
+                    <div class="range-slider">
+                        <input type="range" id="age-min" min="0" max="120" value="0">
+                        <input type="range" id="age-max" min="0" max="120" value="120">
+                        <div class="slider-track"></div>
+                    </div>
+                </div>
+                <!--sesso-->
+                <div id="sex-buttons">
+                    <button id="sex-males">Maschi</button>
+                    <button id="sex-females">Femmine</button>
+                </div>
+            </section>
+            <section id="central-section">
+                <!--quartieri slicer-->
+                <div id="quartieri">
+                    <button id="quartieri-select-all">Seleziona tutti</button>
+                    <button id="quartieri-deselect-all">Deseleziona tutti</button>
+                </div>              
+                <!--world map-->
+                <div id="map"></div>    
+                <!--areas buttons-->
+                <div id="areas-buttons">
+                    <button id="select-all-countries">Seleziona tutti i Paesi</button>
+                    <button id="deselect-all-countries">Deseleziona tutti i Paesi</button>
+                    <button id="ex-italy">Ex-Italia</button>
+                </div>            
+            </section>
+            <section>
+                <div id="outputs">
+                    <output id="value">0</output>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <!--footer-->            
+        </footer>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/arquero@5.4.0"></script>
+        <script src="application.js"></script>
+    </body>
+</html>
